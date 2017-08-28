@@ -1,11 +1,11 @@
-package collections;
+package reinvent_wheel.collections;
 
 import java.util.Arrays;
 
 public class MyArrayList<T> {
     private T[] array;
     private int capacity;
-    private int count;
+    private int size;
 
     public MyArrayList() {
         this.capacity = 10;
@@ -14,11 +14,11 @@ public class MyArrayList<T> {
 
     // добавляет элемент в конец
     public void add(T value) {
-        if (count < array.length) {
+        if (size < array.length) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] == null) {
                     array[i] = value;
-                    count++;
+                    size++;
                     break;
                 }
             }
