@@ -1,7 +1,7 @@
-package reinvent_wheel;
+package collections;
 
-import reinvent_wheel.collections.MyArrayList;
-import reinvent_wheel.collections.MyLinkedList;
+import collections.collections.MyArrayList;
+import collections.collections.MyLinkedList;
 
 public class Main {
 

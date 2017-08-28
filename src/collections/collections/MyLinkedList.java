@@ -1,4 +1,4 @@
-package reinvent_wheel.collections;
+package collections.collections;
 
 public class MyLinkedList<T> {
     private Node<T> first; // первый

@@ -1,4 +1,4 @@
-package reinvent_wheel.collections;
+package collections.collections;
 
 import java.util.Arrays;
 
