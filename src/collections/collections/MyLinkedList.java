@@ -22,11 +22,34 @@ public class MyLinkedList<T> {
 
     // удаляет элемент под индексом
     public void remove(int index) {
-
+        // получаем ноду, которую нам нужно удалить
+        int count = 0;
+        Node<T> iterator = first;
+        if (iterator == null) {
+            return;
+        }
+        do {
+            count++;
+            iterator = iterator.next;
+        } while (count != index - 1);
+        // перезаписываем связи и уменьшаем размер коллекции
+        iterator.prev.next = iterator.next;
+        iterator.next.prev = iterator.prev;
+        iterator.next = iterator.prev = null;
+        iterator.element = null;
+        size--;
     }
 
     // очищает коллекцию
     public void clear() {
+        for (Node<T> x = first; x != null; ) {
+            Node<T> next = x.next;
+            x.element = null;
+            x.next = null;
+            x.prev = null;
+            x = next;
+        }
+        first = last = null;
         size = 0;
     }
 
@@ -37,13 +60,21 @@ public class MyLinkedList<T> {
 
     // возвращает элемент под индексом
     public void get(int index) {
-
+        int count = 0;
+        Node<T> iterator = first;
+        if (iterator == null) {
+            return;
+        }
+        do {
+            count++;
+            iterator = iterator.next;
+        } while (count != index - 1);
+        System.out.println("искомый элемент коллекции " + iterator.element); // выводим найденную ноду
     }
 
     public void show() {
         Node<T> iterator = first;
         if (iterator == null) {
-            System.out.println("first null");
             return;
         }
         do {

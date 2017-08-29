@@ -9,7 +9,7 @@ public class Main {
         // проверяем MyArrayList
 //        testArrayList();
         // проверяем MyLinkedList
-        testLinkedList();
+//        testLinkedList();
 
 
     }
@@ -26,6 +26,15 @@ public class Main {
         myLinkedList.show();
         // показываем размер
         System.out.println("размер " + myLinkedList.size());
+        // удаляем по индексу
+        myLinkedList.remove(5);
+        myLinkedList.show(); // показываем после уаления для проверки
+        // ищем по индекусу
+        myLinkedList.get(5);
+        // чистим и показываем
+        myLinkedList.clear();
+        myLinkedList.show();
+        System.out.println("размер после чистки " + myLinkedList.size());
     }
 
     private static void testArrayList() {
