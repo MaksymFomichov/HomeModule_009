@@ -59,19 +59,20 @@ public class MyLinkedList<T> {
     }
 
     // возвращает элемент под индексом
-    public void get(int index) {
+    public Node get(int index) {
         int count = 0;
         Node<T> iterator = first;
         if (iterator == null) {
-            return;
+            return null;
         }
         do {
             count++;
             iterator = iterator.next;
         } while (count != index - 1);
-        System.out.println("искомый элемент коллекции " + iterator.element); // выводим найденную ноду
+        return iterator;
     }
 
+    // выводим коллекцию в консоль
     public void show() {
         Node<T> iterator = first;
         if (iterator == null) {
